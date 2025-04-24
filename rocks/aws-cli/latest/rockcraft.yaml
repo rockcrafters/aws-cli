@@ -1,0 +1,23 @@
+name: aws-cli
+summary: Universal Command Line Interface for Amazon Web Services
+description: |
+  The AWS CLI is an open source tool built on top of the AWS SDK for Python (Boto) that provides
+  commands for interacting with AWS services. With minimal configuration, you can start using all of
+  the functionality provided by the AWS Management Console from your favorite terminal program.
+  
+  The official documentation can be found here: https://aws.amazon.com/cli/
+version: "latest"
+license: Apache-2.0
+base: bare
+build-base: ubuntu@22.04
+platforms:
+  amd64:
+
+parts:
+  'aws-cli':
+    plugin: nil
+    stage-snaps:
+      - aws-cli
+    stage-packages:
+      - libc6
+      - zlib1g
